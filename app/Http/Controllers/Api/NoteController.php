@@ -6,6 +6,7 @@ use App\ApiData;
 use App\Http\Controllers\Controller;
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class NoteController extends Controller
 {
@@ -22,7 +23,7 @@ class NoteController extends Controller
         $note->semester = $request->semester;
         $note->subject = $request->subject;
         $note->faculty_id = $request->faculty_id;
-        $note->user_id = $request->user_id;
+        $note->user_id = Auth::user()->id;
         if($request->has('image')){
             $note->image = $request->image->store('note/data');
         }
@@ -37,7 +38,7 @@ class NoteController extends Controller
         $note->semester = $request->semester;
         $note->subject = $request->subject;
         $note->faculty_id = $request->faculty_id;
-        $note->user_id = $request->user_id;
+        $note->user_id =Auth::user()->id;
         if($request->has('image')){
             $note->image = $request->image->store('note/data');
         }

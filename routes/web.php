@@ -1,5 +1,6 @@
 <?php
 
+use App\Helper;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    echo Helper::getFilePath(1);
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
