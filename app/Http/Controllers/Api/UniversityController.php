@@ -11,7 +11,7 @@ class UniversityController extends Controller
 {
     //
     public function list(){
-        $universities = University::all();
+        $universities = University::with('faculty')->get();
         return res::S($universities);
     }
 

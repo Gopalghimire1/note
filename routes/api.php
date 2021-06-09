@@ -16,10 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('login',[AuthController::class,'login']);
+Route::post('register',[AuthController::class,'register']);
+Route::match(['GET','POST'],'note/filter','Api\NoteController@listNotes');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
 
 
 Route::middleware('auth:api')->group(function () {
@@ -42,5 +46,6 @@ Route::middleware('auth:api')->group(function () {
         Route::post('update','Api\NoteController@update');
         Route::post('delete','Api\NoteController@delete');
         Route::get('list','Api\NoteController@list');
+        Route::match(['GET','POST'],'check-option','Api\NoteController@checkOption');
     });
 });
