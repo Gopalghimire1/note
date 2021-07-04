@@ -1,0 +1,44 @@
+.main {
+    .sidebar {
+        width: 280px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        padding: 20px;
+        .side-menu {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: rgb(46, 83, 218);
+            background: linear-gradient(
+                0deg,
+                rgba(46, 83, 218, 1) 0%,
+                rgba(42, 82, 215, 1) 100%
+            );
+            border-radius: 20px;
+            box-shadow: 0 0 10px 0 rgba(44, 83, 217,0.3);
+            overflow: hidden;
+            .logo{
+                background-color: white;
+                padding:10px auto;
+            }
+            .menu{
+                flex-grow: 1;
+                overflow: auto;
+                color:white;
+                .menu-item{
+                    padding: 2rem;
+                }
+            }
+        }
+    }
+    .content {
+        margin-left: 260px;
+        padding:20px;
+        .top-bar{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

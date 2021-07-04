@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     use HasFactory;
+    public function faculty(){
+        return $this->belongsTo(Faculty::class);
+    }
 }

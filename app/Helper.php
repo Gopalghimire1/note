@@ -8,6 +8,6 @@ class Helper{
             $ss[$i]=substr($str,$i*3,3);
         }
 
-        return "note/data/".implode("/",$ss);
+        return "uploads/note/data/".implode("/",$ss);
     }
 }
